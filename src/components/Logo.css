@@ -1,0 +1,61 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  margin-right: 0.75rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.logo-tagline {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-name {
+    font-size: 1.5rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.7rem;
+  }
+  
+  .logo-icon {
+    font-size: 2rem;
+  }
+} 
