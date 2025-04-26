@@ -6,17 +6,18 @@ const samplePlants = [
   {
     id: 1,
     name: 'Basil',
-    image: 'https://example.com/basil.jpg',
+    image: 'https://images.unsplash.com/photo-1629157247277-48f870757026?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFzaWx8ZW58MHx8MHx8fDA%3D',
     description: 'A popular culinary herb with a sweet, slightly peppery flavor.',
     fullInfo: 'Basil is a tender herb that grows best in warm weather...'
   },
   {
     id: 2,
     name: 'Mint',
-    image: 'https://example.com/mint.jpg',
+    image: 'https://images.unsplash.com/photo-1618130070080-91f4d55a2383?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWludHxlbnwwfHwwfHx8MA%3D%3D',
     description: 'A refreshing herb known for its cooling properties.',
     fullInfo: 'Mint is a fast-growing herb that can be invasive...'
   },
+  
   // Add more plants as needed
 ];
 
