@@ -1,5 +1,8 @@
 import React from 'react';
 import { FaLeaf, FaSeedling, FaBook, FaStar } from 'react-icons/fa';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './HomePage.css';
 
 const HomePage = () => {
@@ -9,7 +12,71 @@ const HomePage = () => {
     scientificName: "Lavandula angustifolia",
     description: "Known for its calming properties and beautiful purple flowers, lavender is a versatile herb used in aromatherapy, cooking, and traditional medicine.",
     uses: ["Aromatherapy", "Sleep aid", "Culinary herb", "Skin care"],
-    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzT002BX_yg4-5CrqP6dvMH4N-2CmZuFeGtQ&s"
+  };
+
+  const showcasePlants = [
+    {
+      name: "Peppermint",
+      scientificName: "Mentha × piperita",
+      description: "A refreshing herb known for its digestive benefits and cooling properties.",
+      image: "https://media.istockphoto.com/id/185240131/photo/as.webp?a=1&b=1&s=612x612&w=0&k=20&c=XaDGhok71ziP862pcWr4tQXnHyxnsynpEL-BzJqJB9o="
+    },
+    {
+      name: "Chamomile",
+      scientificName: "Matricaria chamomilla",
+      description: "A gentle herb famous for its calming effects and sleep-inducing properties.",
+      image: "https://images.unsplash.com/photo-1683372466590-f01038538026?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoYW1vbWlsZSUyMHBsYW50fGVufDB8fDB8fHww"
+    },
+    {
+      name: "Echinacea",
+      scientificName: "Echinacea purpurea",
+      description: "A powerful immune-boosting herb with beautiful purple flowers.",
+      image: "https://plus.unsplash.com/premium_photo-1664527009207-460d1e46a19a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      name: "Rosemary",
+      scientificName: "Salvia rosmarinus",
+      description: "A fragrant herb known for its memory-enhancing properties and culinary uses.",
+      image: "https://images.unsplash.com/photo-1618679639167-41f5df274ca9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cm9zZW1hcnklMjBwbGFudHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      name: "Ginger",
+      scientificName: "Zingiber officinale",
+      description: "A warming root with powerful anti-inflammatory and digestive benefits.",
+      image: "https://images.unsplash.com/photo-1603431777782-912e3b76f60d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2luZ2VyJTIwcGxhbnR8ZW58MHx8MHx8fDA%3D"
+    }
+  ];
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '100px',
+    focusOnSelect: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true,
+          centerPadding: '60px'
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: '0'
+        }
+      }
+    ]
   };
 
   return (
@@ -84,6 +151,30 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="plant-showcase">
+        <div className="showcase-header">
+          <h2>Explore Our Plant Collection</h2>
+          <p>Discover the healing power of nature's pharmacy</p>
+        </div>
+        <div className="showcase-container">
+          <Slider {...sliderSettings}>
+            {showcasePlants.map((plant, index) => (
+              <div key={index} className="showcase-card">
+                <div className="plant-image">
+                  <img src={plant.image} alt={plant.name} />
+                </div>
+                <div className="plant-details">
+                  <h3>{plant.name}</h3>
+                  <p className="scientific-name">{plant.scientificName}</p>
+                  <p className="description">{plant.description}</p>
+                  <button className="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
 
